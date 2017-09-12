@@ -1,25 +1,20 @@
 {
-  "name": "wpdl.styl",
+  "name": "wpdls",
   "version": "0.0.1",
   "description": "Basic custom WordPress dashboard style made easy",
-  "main": "index.js",
+  "style": "index.styl",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kaisermann/WPDL.styl.git"
+    "url": "git+https://github.com/kaisermann/wpdls.git"
   },
-  "keywords": [
-    "stylus",
-    "wordpress",
-    "admin",
-    "login"
-  ],
+  "keywords": ["stylus", "wordpress", "admin", "login"],
   "author": "Christian Kaisermann",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/kaisermann/WPDL.styl/issues"
+    "url": "https://github.com/kaisermann/wpdls/issues"
   },
-  "homepage": "https://github.com/kaisermann/WPDL.styl#readme"
+  "homepage": "https://github.com/kaisermann/wpdls#readme"
 }
