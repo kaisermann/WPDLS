@@ -1,6 +1,6 @@
 # WPDLS - WordPress Dashboard/Login Style
 
-Basic custom WordPress admin style made easy
+Basic custom WordPress admin style made easy and "smart". WPDLS tries to understand which colors are on the background of elements to adapt its forecolor to a legible one.
 
 ## How to use
 
