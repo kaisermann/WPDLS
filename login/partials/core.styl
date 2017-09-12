@@ -1,9 +1,9 @@
-$login-font = wpdl.login.font or unquote('-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif')
-$login-bg-color = wpdl.login.background.color or colors.white
-$login-bg-img = 'url(%s)' % wpdl.login.background.image
-$login-bg-size = wpdl.login.background.size
-$login-color = wpdl.login.color or colors.black
-$roaming-link = invIfSimilar(wpdl.login.color, $login-bg-color)
+$login-font = wpdls.login.font or unquote('-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif')
+$login-bg-color = wpdls.login.background.color or colors.white
+$login-bg-img = 'url(%s)' % wpdls.login.background.image
+$login-bg-size = wpdls.login.background.size
+$login-color = wpdls.login.color or colors.black
+$roaming-link = invIfSimilar(wpdls.login.color, $login-bg-color)
 $roaming-link-hover = mix($roaming-link, $login-bg-color, 80%)
 
 // Login page
@@ -26,10 +26,10 @@ body.login
 			color: $roaming-link-hover
 			text-decoration: underline !important
 
-if wpdl.login.logo
-	$login-logo-img = wpdl.login.logo.image or 'https://s.w.org/about/images/logos/wordpress-logo-notext-rgb.png'
-	$login-logo-width = wpdl.login.logo.width or 120px
-	$login-logo-height = wpdl.login.logo.height or 120px
+if wpdls.login.logo
+	$login-logo-img = wpdls.login.logo.image or 'https://s.w.org/about/images/logos/wordpress-logo-notext-rgb.png'
+	$login-logo-width = wpdls.login.logo.width or 120px
+	$login-logo-height = wpdls.login.logo.height or 120px
 	#login
 		padding: 0
 		h1
@@ -38,15 +38,15 @@ if wpdl.login.logo
 
 			a
 				width: 100%
-				if wpdl.login.logo != null
+				if wpdls.login.logo != null
 					height: $login-logo-height
 					background-image: url($login-logo-img)
 					background-size: $login-logo-width auto
 
-if wpdl.login.alert
-	$login-alert-background = wpdl.login.alert.background or colors.white
-	$login-alert-text = invIfSimilar(wpdl.login.alert.color or colors.black, $login-alert-background)
-	$login-alert-link = invIfSimilar(wpdl.login.alert.link or colors.black, $login-alert-background)
+if wpdls.login.alert
+	$login-alert-background = wpdls.login.alert.background or colors.white
+	$login-alert-text = invIfSimilar(wpdls.login.alert.color or colors.black, $login-alert-background)
+	$login-alert-link = invIfSimilar(wpdls.login.alert.link or colors.black, $login-alert-background)
 
 	.login .message
 	.login #login_error
@@ -55,17 +55,17 @@ if wpdl.login.alert
 		a
 			color: $login-alert-link
 
-if wpdl.login.button
-	$login-form-button-background = wpdl.login.button.background or #0085ba
-	$login-form-button-color = wpdl.login.button.color or #fff
+if wpdls.login.button
+	$login-form-button-background = wpdls.login.button.background or #0085ba
+	$login-form-button-color = wpdls.login.button.color or #fff
 	#wp-submit
 		button($login-form-button-background, $login-form-button-color)
 
-if wpdl.login.form
-	$login-form-background = wpdl.login.form.background or colors.white
-	$login-form-color = wpdl.login.form.color or black
-	$login-form-padding = wpdl.login.form.padding != null ? wpdl.login.form.padding : 26px
-	$login-form-border-radius = wpdl.login.form.borderRadius or 0
+if wpdls.login.form
+	$login-form-background = wpdls.login.form.background or colors.white
+	$login-form-color = wpdls.login.form.color or black
+	$login-form-padding = wpdls.login.form.padding != null ? wpdls.login.form.padding : 26px
+	$login-form-border-radius = wpdls.login.form.borderRadius or 0
 
 	.login
 		#nav
@@ -84,9 +84,9 @@ if wpdl.login.form
 		box-shadow: none
 
 
-	if wpdl.login.form.input
-		$login-form-input-background = wpdl.login.form.input.background or colors.white
-		$login-form-input-color = invIfSimilar(wpdl.login.form.input.color or colors.black, $login-form-input-background)
+	if wpdls.login.form.input
+		$login-form-input-background = wpdls.login.form.input.background or colors.white
+		$login-form-input-color = invIfSimilar(wpdls.login.form.input.color or colors.black, $login-form-input-background)
 		.login
 			form
 				input
