@@ -1,0 +1,14 @@
+// Since we enforce an admin style, let's hide the admin theme selection area
+.user-admin-color-wrap
+	> td
+		position: relative
+
+		fieldset
+			display: none
+
+		&::before
+			color: #f00
+			content: 'Dashboard CSS is controlled by the active theme.'
+			display: block
+			width: 100%
+			height: 100%

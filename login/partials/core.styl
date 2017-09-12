@@ -1,0 +1,115 @@
+$login-font = wpdl.login.font or unquote('Helvetica Neue, sans-serif')
+$login-bg-color = wpdl.login.background.color or colors.white
+$login-bg-img = 'url(%s)' % wpdl.login.background.image
+$login-bg-size = wpdl.login.background.size
+$login-color = wpdl.login.color or colors.black
+$roaming-link = invIfSimilar(wpdl.login.color, $login-bg-color)
+$roaming-link-hover = mix($roaming-link, $login-bg-color, 80%)
+
+// Login page
+body.login
+	display: flex
+	align-content: center
+	color: $login-color
+	background-color: $login-bg-color
+	background-image: unquote($login-bg-img)
+	background-size: $login-bg-size
+	background-position: 50%
+	font-family: $login-font
+	font-weight: 500
+
+.login #nav
+.login #backtoblog
+	a
+		color: $roaming-link
+		&:hover
+			color: $roaming-link-hover
+			text-decoration: underline !important
+
+if wpdl.login.logo
+	$login-logo-img = wpdl.login.logo.image or 'https://s.w.org/about/images/logos/wordpress-logo-notext-rgb.png'
+	$login-logo-width = wpdl.login.logo.width or 120px
+	$login-logo-height = wpdl.login.logo.height or 120px
+	#login
+		padding: 0
+		h1
+			width: 100%
+			margin: 0 auto
+
+			a
+				width: 100%
+				if wpdl.login.logo != null
+					height: $login-logo-height
+					background-image: url($login-logo-img)
+					background-size: $login-logo-width auto
+
+if wpdl.login.alert
+	$login-alert-background = wpdl.login.alert.background or colors.white
+	$login-alert-text = invIfSimilar(wpdl.login.alert.color or colors.black, $login-alert-background)
+	$login-alert-link = invIfSimilar(wpdl.login.alert.link or colors.black, $login-alert-background)
+
+	.login .message
+	.login #login_error
+		background-color: $login-alert-background
+		color: $login-alert-text
+		a
+			color: $login-alert-link
+
+if wpdl.login.button
+	$login-form-button-background = wpdl.login.button.background or #0085ba
+	$login-form-button-color = wpdl.login.button.color or #fff
+	#wp-submit
+		button($login-form-button-background, $login-form-button-color)
+
+if wpdl.login.form
+	$login-form-background = wpdl.login.form.background or colors.white
+	$login-form-color = wpdl.login.form.color or black
+	$login-form-padding = wpdl.login.form.padding != null ? wpdl.login.form.padding : 26px
+	$login-form-border-radius = wpdl.login.form.borderRadius or 0
+
+	.login
+		#nav
+		#backtoblog
+			padding: 0 $login-form-padding 0
+
+		label
+			font-family: $login-font
+			color: $login-form-color
+			font-weight: 300
+
+	#loginform
+		border-radius: $login-form-border-radius
+		background: $login-form-background
+		padding: $login-form-padding
+		box-shadow: none
+
+
+	if wpdl.login.form.input
+		$login-form-input-background = wpdl.login.form.input.background or colors.white
+		$login-form-input-color = invIfSimilar(wpdl.login.form.input.color or colors.black, $login-form-input-background)
+		.login
+			form
+				input
+					&[type="text"]
+					&[type="password"]
+						background-color: $login-form-input-background
+						color: $login-form-input-color
+
+					&[type="checkbox"]
+						background-color: $login-form-input-background
+						box-shadow: inset 0 0 2px rgba( $login-form-input-color, 0.4 )
+						border-color: $login-form-input-background
+
+						&:checked
+							&::before
+								color: $login-form-input-color
+
+					&:focus
+						box-shadow: inset 0 0 2px rgba( $login-form-input-color, 0.4 )
+
+					&:-webkit-autofill
+						-webkit-box-shadow: 0 0 0px 1000px $login-form-input-background inset !important
+
+/* Auth lightbox */
+.interim-login #login
+	margin: 30px auto
