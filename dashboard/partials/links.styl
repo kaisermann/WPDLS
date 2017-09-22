@@ -1,13 +1,21 @@
 /* Links */
 a
-	color: $link
-	&:hover,
-	&:active,
+.wp-core-ui .button-link
+.media-frame a
+	color: $link-color
+	&:hover
+	&:active
 	&:focus
-		color: $link-focus
+		color: $link-focus-color
 
-#media-upload a.del-link:hover,
-div.dashboard-widget-submit input:hover,
-.subsubsub a:hover,
+#media-upload a.del-link:hover
+div.dashboard-widget-submit input:hover
+.subsubsub a:hover
 .subsubsub a.current:hover
-	color: $link-focus
+	color: $link-focus-color
+
+.filter-links li a
+	&:hover
+		color: $link-color
+	&.current
+		border-bottom: 4px solid $link-color

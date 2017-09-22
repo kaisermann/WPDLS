@@ -2,6 +2,7 @@
 body
 	background: $body-background
 	font-family: $body-font
+	color: $body-color
 
 .wp-core-ui
 	.button-primary
@@ -30,3 +31,11 @@ body
 
 	.wp-ui-text-icon
 		color: $menu-icon
+
+	.wp-full-overlay
+		.collapse-sidebar
+			&:hover
+			&:focus
+				color: $link-color
+				.collapse-sidebar-arrow
+					box-shadow: none

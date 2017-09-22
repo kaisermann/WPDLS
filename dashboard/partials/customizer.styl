@@ -1,0 +1,36 @@
+#customize-controls
+	.customize-info .customize-help-toggle
+		&:hover
+		&:focus
+			color: $customizer-main-color
+			&::before
+				box-shadow: none !important
+
+	.customize-controls-close
+		&:hover
+		&:focus
+			color: $customizer-main-color
+			border-top-color: $customizer-main-color
+
+	.control-section .accordion-section-title
+	.control-section .accordion-section
+	.customize-section-back
+	.customize-panel-back
+		&:hover
+		&:focus
+			color: $customizer-main-color
+			border-left-color: $customizer-main-color
+			&::after
+				color: $customizer-main-color
+
+#customize-footer-actions
+	.devices
+		button
+			&.active
+			&:focus
+			&:hover
+				border-bottom-color: $customizer-main-color
+			&:hover
+			&:focus
+				&::before
+					color: $customizer-main-color
