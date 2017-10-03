@@ -1,11 +1,3 @@
-$login-font = wpdls.login.font or unquote('-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif')
-$login-bg-color = wpdls.login.background.color or colors.white
-$login-bg-img = 'url(%s)' % wpdls.login.background.image
-$login-bg-size = wpdls.login.background.size
-$login-color = wpdls.login.color or colors.black
-$roaming-link = invIfSimilar(wpdls.login.color, $login-bg-color)
-$roaming-link-hover = mix($roaming-link, $login-bg-color, 80%)
-
 // Login page
 body.login
 	display: flex
@@ -27,9 +19,6 @@ body.login
 			text-decoration: underline !important
 
 if wpdls.login.logo
-	$login-logo-img = wpdls.login.logo.image or 'https://s.w.org/about/images/logos/wordpress-logo-notext-rgb.png'
-	$login-logo-width = wpdls.login.logo.width or 120px
-	$login-logo-height = wpdls.login.logo.height or 120px
 	#login
 		padding: 0
 		h1
@@ -44,10 +33,6 @@ if wpdls.login.logo
 					background-size: $login-logo-width auto
 
 if wpdls.login.alert
-	$login-alert-background = wpdls.login.alert.background or colors.white
-	$login-alert-text = invIfSimilar(wpdls.login.alert.color or colors.black, $login-alert-background)
-	$login-alert-link = invIfSimilar(wpdls.login.alert.link or colors.black, $login-alert-background)
-
 	.login .message
 	.login #login_error
 		background-color: $login-alert-background
@@ -56,17 +41,10 @@ if wpdls.login.alert
 			color: $login-alert-link
 
 if wpdls.login.button
-	$login-form-button-background = wpdls.login.button.background or #0085ba
-	$login-form-button-color = wpdls.login.button.color or #fff
 	#wp-submit
 		button($login-form-button-background, $login-form-button-color)
 
 if wpdls.login.form
-	$login-form-background = wpdls.login.form.background or colors.white
-	$login-form-color = wpdls.login.form.color or black
-	$login-form-padding = wpdls.login.form.padding != null ? wpdls.login.form.padding : 26px
-	$login-form-border-radius = wpdls.login.form.borderRadius or 0
-
 	.login
 		#nav
 		#backtoblog
@@ -85,8 +63,6 @@ if wpdls.login.form
 
 
 	if wpdls.login.form.input
-		$login-form-input-background = wpdls.login.form.input.background or colors.white
-		$login-form-input-color = invIfSimilar(wpdls.login.form.input.color or colors.black, $login-form-input-background)
 		.login
 			form
 				input
