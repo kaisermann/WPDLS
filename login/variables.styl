@@ -3,7 +3,7 @@ $login-bg-color = wpdls.login.background.color or colors.white
 $login-bg-img = 'url(%s)' % wpdls.login.background.image
 $login-bg-size = wpdls.login.background.size
 $login-color = wpdls.login.color or colors.black
-$roaming-link = invIfSimilar(wpdls.login.color, $login-bg-color)
+$roaming-link = $login-color
 $roaming-link-hover = mix($roaming-link, $login-bg-color, 80%)
 
 if wpdls.login.logo
