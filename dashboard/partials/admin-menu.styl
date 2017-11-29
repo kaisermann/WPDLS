@@ -84,9 +84,11 @@ ul#adminmenu > li.current > a.current:after
 /* Admin Menu: bubble */
 #adminmenu .awaiting-mod,
 #adminmenu .update-plugins
+	// transition: .3s ease
 	color: $menu-bubble-text
 	background: $menu-bubble-background
 
+/* Removed (for now) 
 #adminmenu li.current a,
 #adminmenu li:hover a,
 #adminmenu li a.wp-has-current-submenu,
@@ -97,8 +99,8 @@ ul#adminmenu > li.current > a.current:after
 .no-js li.wp-has-submenu:hover .wp-submenu
 	.awaiting-mod
 	.update-plugins
-		color: $menu-bubble-current-text
-		background: $menu-bubble-current-background
+		transform: scale(1.1)
+*/
 
 /* Admin Menu: collapse button */
 #collapse-button
